@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/76b3d83c-a0b8-4e60-af95-43f274e018d3" width="128" alt="Ring Plus"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Alexlambertz/hass-ring_plus/main/custom_components/ring_plus/brand/icon%402x.png" width="128" alt="Ring Plus"></p>
 
 # Ring Plus for Home Assistant
 
@@ -128,4 +128,4 @@ re-authenticate from the integration page.
 
 - Bugs / ideas: [GitHub issues](https://github.com/Alexlambertz/hass-ring_plus/issues). Please include
   Home Assistant version, log excerpt and **redact** serial numbers, IPs, Wi-Fi names and tokens.
-- Contributing, local testing, building and releasing: see [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md).
+- Contributing, local testing, building and releasing: see [`docs/DEVELOPMENT.md`](https://github.com/Alexlambertz/hass-ring_plus/blob/main/docs/DEVELOPMENT.md).
