@@ -12,4 +12,6 @@ for f in dist/ring_plus/*.py; do
   rm "$f.bak"
 done
 (cd dist && tar czf ring_plus.tar.gz ring_plus)
-echo "built dist/ring_plus.tar.gz"
+# HACS release asset: zip root = the integration files themselves
+(cd dist/ring_plus && zip -qr ../ring_plus.zip .)
+echo "built dist/ring_plus.tar.gz and dist/ring_plus.zip"

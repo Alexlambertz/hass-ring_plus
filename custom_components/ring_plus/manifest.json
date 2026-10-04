@@ -1,11 +1,14 @@
 {
   "domain": "ring_plus",
   "name": "Ring Plus",
-  "codeowners": [],
+  "codeowners": [
+    "@Alexlambertz"
+  ],
   "config_flow": true,
-  "documentation": "https://github.com/",
+  "documentation": "https://github.com/Alexlambertz/hass-ring_plus",
   "integration_type": "hub",
   "iot_class": "cloud_push",
+  "issue_tracker": "https://github.com/Alexlambertz/hass-ring_plus/issues",
   "requirements": [],
-  "version": "0.1.0"
+  "version": "0.1.1"
 }

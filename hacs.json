@@ -1,1 +1,7 @@
-{"name": "Ring Plus", "render_readme": true}
+{
+  "name": "Ring Plus",
+  "render_readme": true,
+  "zip_release": true,
+  "filename": "ring_plus.zip",
+  "homeassistant": "2025.11.0"
+}
