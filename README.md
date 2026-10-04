@@ -129,3 +129,7 @@ re-authenticate from the integration page.
 - Bugs / ideas: [GitHub issues](https://github.com/Alexlambertz/hass-ring_plus/issues). Please include
   Home Assistant version, log excerpt and **redact** serial numbers, IPs, Wi-Fi names and tokens.
 - Contributing, local testing, building and releasing: see [`docs/DEVELOPMENT.md`](https://github.com/Alexlambertz/hass-ring_plus/blob/main/docs/DEVELOPMENT.md).
+
+## License
+
+[MIT](https://github.com/Alexlambertz/hass-ring_plus/blob/main/LICENSE). Not affiliated with Ring or Amazon.
