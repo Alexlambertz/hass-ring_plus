@@ -1,4 +1,4 @@
-<p align="center"><img src="custom_components/ring_plus/brand/icon@2x.png" width="128" alt="Ring Plus"></p>
+<p align="center"><img src="https://github.com/76b3d83c-a0b8-4e60-af95-43f274e018d3" width="128" alt="Ring Plus"></p>
 
 # Ring Plus for Home Assistant
 
