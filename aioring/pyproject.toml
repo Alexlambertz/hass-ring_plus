@@ -1,0 +1,16 @@
+[project]
+name = "aioring"
+version = "0.1.0"
+description = "Async client for Ring (Alarm websocket, cameras, doorbells)"
+requires-python = ">=3.12"
+dependencies = ["aiohttp>=3.9"]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio", "aioresponses"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.egg-info/
+.venv/
+.ring_token.json
+.ring_hw
+dist/
+.pytest_cache/

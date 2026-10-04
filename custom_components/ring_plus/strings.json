@@ -1,0 +1,23 @@
+{
+  "config": {
+    "step": {
+      "user": {"title": "Ring account", "description": "Sign in with your Ring account.",
+               "data": {"username": "Email", "password": "Password"}},
+      "2fa": {"title": "Two-factor authentication", "data": {"otp": "Verification code"}},
+      "devices": {"title": "Device types", "description": "Choose which device types to import.",
+                  "data": {"device_types": "Device types"}}
+    },
+    "error": {"invalid_auth": "Invalid credentials", "invalid_2fa": "Invalid verification code",
+              "cannot_connect": "Cannot connect to Ring"},
+    "abort": {"already_configured": "Account already configured",
+              "reauth_successful": "Re-authentication successful"}
+  },
+  "options": {"step": {"init": {"title": "Device types",
+              "description": "Choose which device types to import.",
+              "data": {"device_types": "Device types"}}}},
+  "selector": {"device_types": {"options": {
+    "alarm_panel": "Alarm panel", "contact_sensors": "Contact sensors",
+    "motion_sensors": "Motion sensors", "other_sensors": "Other sensors (glass break, tilt zones, panic)", "smoke_co": "Smoke & CO detectors",
+    "flood_freeze": "Flood & freeze sensors", "base_station": "Base station", "keypads_sirens": "Keypads, sirens & extenders",
+    "cameras": "Cameras", "chimes": "Chimes", "doorbells": "Doorbells"}}}
+}
