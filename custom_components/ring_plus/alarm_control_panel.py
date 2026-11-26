@@ -4,6 +4,9 @@ from __future__ import annotations
 from homeassistant.components.alarm_control_panel import (
     AlarmControlPanelEntity, AlarmControlPanelEntityFeature, AlarmControlPanelState)
 
+from aioring import RingError
+from homeassistant.exceptions import HomeAssistantError
+
 from .entity import RingAlarmEntity
 
 MODE_STATE = {"none": AlarmControlPanelState.DISARMED, "some": AlarmControlPanelState.ARMED_HOME,
@@ -20,7 +23,8 @@ class RingAlarmPanel(RingAlarmEntity, AlarmControlPanelEntity):
     _attr_name = None
     _attr_code_arm_required = False
     _attr_supported_features = (AlarmControlPanelEntityFeature.ARM_HOME
-                                | AlarmControlPanelEntityFeature.ARM_AWAY)
+                                | AlarmControlPanelEntityFeature.ARM_AWAY
+                                | AlarmControlPanelEntityFeature.TRIGGER)
 
     @property
     def alarm_state(self) -> AlarmControlPanelState | None:
@@ -48,11 +52,21 @@ class RingAlarmPanel(RingAlarmEntity, AlarmControlPanelEntity):
             "exit_delay_away": (modes.get("all") or {}).get("transitionDelay"),
         }
 
+    async def _run(self, coro) -> None:
+        try:
+            await coro
+        except RingError as err:
+            raise HomeAssistantError(f"Ring Alarm command failed: {err}") from err
+
     async def async_alarm_disarm(self, code=None):
-        await self._conn.set_mode(self._zid, "none")
+        await self._run(self._conn.set_mode(self._zid, "none"))
 
     async def async_alarm_arm_home(self, code=None):
-        await self._conn.set_mode(self._zid, "some")
+        await self._run(self._conn.set_mode(self._zid, "some"))
 
     async def async_alarm_arm_away(self, code=None):
-        await self._conn.set_mode(self._zid, "all")
+        await self._run(self._conn.set_mode(self._zid, "all"))
+
+    async def async_alarm_trigger(self, code=None):
+        """Sound the Ring Alarm siren (same as "Sound siren" in the Ring app)."""
+        await self._run(self._conn.sound_siren(self._zid))

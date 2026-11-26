@@ -120,9 +120,8 @@ class RingAlarmConnection:
         await self._ws.send_str(json.dumps({"channel": "message", "msg": message}))
 
     async def _command(self, zid: str, command_type: str, data: dict | None = None) -> None:
-        body: dict[str, Any] = {"commandType": command_type}
-        if data is not None:
-            body["data"] = data
+        # Always include a data object ({} when there is nothing to send).
+        body: dict[str, Any] = {"commandType": command_type, "data": data or {}}
         await self._send({
             "msg": "DeviceInfoSet", "datatype": "DeviceInfoSetType", "dst": self.asset_id,
             "body": [{"zid": zid, "command": {"v1": [body]}}],
