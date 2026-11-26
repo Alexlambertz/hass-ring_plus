@@ -13,7 +13,8 @@ You choose which device types are imported.
 
 | Area | What you get |
 |------|--------------|
-| **Alarm panel** | Arm home / arm away / disarm; states disarmed, armed home/away, arming, pending (entry delay), triggered. Attributes: entry/exit delays, siren state, bypassed devices |
+| **Alarm panel** | Arm home / arm away / disarm / trigger (sounds the siren); states disarmed, armed home/away, arming, pending (entry delay), triggered. Attributes: entry/exit delays, siren state, bypassed devices |
+| **Alarm siren** | `siren` entity on the panel: turn on sounds the Ring Alarm siren, turn off silences it |
 | **Alarm sensors** | Contact (door/window), motion, tilt, glass break, smoke/CO, flood/freeze, with tamper and battery |
 | **Alarm hardware** | Base station (AC power, battery backup, firmware, Wi-Fi/cellular signal, active network), keypads, sirens, range extenders |
 | **Diagnostics** | Connectivity, low battery, AC power, Z-Wave link quality, last communication |
