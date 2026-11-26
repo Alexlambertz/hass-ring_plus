@@ -34,6 +34,9 @@ class RingAlarmPanel(RingAlarmEntity, AlarmControlPanelEntity):
             return AlarmControlPanelState.PENDING
         if alarm.endswith("-alarm") or alarm.startswith("panic"):
             return AlarmControlPanelState.TRIGGERED
+        # A siren sounded on demand (alarm_trigger / siren entity) sets no alarmInfo.
+        if (dev.get("siren") or {}).get("state") == "on":
+            return AlarmControlPanelState.TRIGGERED
         if dev.get("transitionDelayEndTimestamp"):
             return (AlarmControlPanelState.PENDING if dev.get("mode") == "none"
                     else AlarmControlPanelState.ARMING)
